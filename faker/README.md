@@ -2,8 +2,8 @@ This Splunk App leverage on Python Faker library to generate sample data for dem
 
 ### Usage
 1. Download and install this Splunk app - Faker
-2. In Splunk UI, Add Data -> Monitor -> Files & Diretories -> New Local File & Directory
-   Faker app will generate json output into this folder $SPLUNK_HOME/etc/apps/fakedata/generated_data/
+2. In Splunk UI, Add Data -> Monitor -> Files & Diretories -> New Local File & Directory <br/>
+   Faker app will generate json output into here $SPLUNK_HOME/etc/apps/fakedata/generated_data/fake_data.json
    Recommend you to create a new Index
 3. You execute a custom command to generate fake data
 ```
@@ -15,7 +15,17 @@ Default values if not specified:
 - earliest = 24 hours ago in the format of yyyy-mm-dd HH:MM:SS
 - latest = current system time in the format of yyyy-mm-dd HH:MM:SS
 
+### Command Options
 
+```
+|faker <options>
+```
+| Options  | Description |
+| ------------- | ------------- |
+|  reset |  This will truncate the output file  |
+|  info  |  To retrieve the location of the output file  |
+|  setup file="<new_json_file_absolute_path> |  To setup new output file   |
+|  default  |  To set the output file to default location $SPLUNK_HOME/etc/apps/faker/generated_data/fake_data.json  |
 
 ### Fields
 You can refer to the full list of fields [here](https://faker.readthedocs.io/en/master/providers.html)
